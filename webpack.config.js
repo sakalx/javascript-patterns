@@ -2,12 +2,12 @@ const isProd = process.env.NODE_ENV === 'production';
 const sourceMap = isProd ? 'nosources-source-map' : 'eval-source-map';
 
 const
+  CleanWebpackPlugin = require('clean-webpack-plugin'),
+  FaviconWebpackPlugin = require('favicons-webpack-plugin'),
+  HtmlWebpackPlugin = require('html-webpack-plugin'),
   path = require('path'),
   webpack = require('webpack'),
-  WebpackPwaManifest = require('webpack-pwa-manifest'),
-  CleanWebpackPlugin = require('clean-webpack-plugin'),
-  HtmlWebpackPlugin = require('html-webpack-plugin'),
-  FaviconWebpackPlugin = require('favicons-webpack-plugin');
+  WebpackPwaManifest = require('webpack-pwa-manifest');
 
 const
   develop = 'src',
@@ -22,7 +22,7 @@ const
 const cleanFolderProd = new CleanWebpackPlugin(production);
 
 const commonsChunk = new webpack.optimize.CommonsChunkPlugin({
-  name: ['index'],
+  name: ['index', 'vendor'],
 });
 
 const favicon = new FaviconWebpackPlugin({
@@ -50,7 +50,7 @@ const htmlIndex = new HtmlWebpackPlugin({
   inject: 'body',
   hash: true,
   filename: 'index.html',
-  chunks: ['index'],
+  chunks: ['index', 'vendor'],
 });
 
 const uglifyJs = new webpack.optimize.UglifyJsPlugin({
@@ -123,11 +123,19 @@ const config = {
 
   entry: {
     index: SRC_DIR + '/index',
+    vendor: [
+      'react',
+      'react-dom',
+      'react-redux',
+      'react-router-dom',
+      'redux',
+      'styled-components',
+    ]
   },
 
   output: {
     path: DIST_DIR + '/',
-    filename: 'js/[name].[chunkhash].bundle.js',
+    filename: 'js/[name].[chunkhash].js',
     sourceMapFilename: '[file].map',
   },
 

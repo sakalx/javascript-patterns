@@ -1,4 +1,4 @@
-# sunny-box
+# Js - patterns info
 online radio
 
 TODO:
