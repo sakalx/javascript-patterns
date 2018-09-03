@@ -184,7 +184,7 @@ const config = {
   // shortcuts
   resolve: {
     alias: {
-      'root': path.resolve(__dirname, develop),
+      'root': path.resolve(__dirname, develop)
     },
   },
 

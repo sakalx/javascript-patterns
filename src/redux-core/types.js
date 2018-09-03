@@ -4,22 +4,10 @@ export const promise = {
   FULFILLED: '_FULFILLED',
 };
 
+export const theme = {
+  TOGGLE_THEME: 'TOGGLE_THEME',
+};
+
 export const notification = {
   TOGGLE_SNACKBAR: 'TOGGLE_SNACKBAR',
-};
-
-export const countiesTypes = {
-  SET_CURRENT_COUNTRY: 'SET_CURRENT_COUNTRY',
-  SET_LIST_OF_COUNTRIES: 'SET_LIST_OF_COUNTRIES',
-};
-
-export const genresTypes = {
-  SET_CURRENT_GENRE: 'SET_CURRENT_GENRE',
-  SET_LIST_OF_GENRES: 'SET_LIST_OF_GENRES',
-};
-
-export const stationsTypes = {
-  SET_STATIONS_BY_COUNTRY: 'GET_STATIONS_BY_COUNTRY',
-  SET_CURRENT_STATION: 'SET_CURRENT_STATION',
-  SET_LIST_OF_STATIONS: 'SET_LIST_OF_STATIONS_BY_COUNTRY',
 };
