@@ -1,24 +1,35 @@
-import {theme} from '../types';
+import {monokaiSublime, xcode} from 'react-syntax-highlighter/styles/hljs';
+import {createMuiTheme} from "@material-ui/core/styles";
+import {TOGGLE_THEME} from '../types';
 
-const {TOGGLE_THEME} = theme;
-
-const initState = {
-  backgroundColor: '#fafafa',
-  type: 'light',
+const customizeThemeLight = {
+  palette: {
+    codeStyle: xcode,
+    primary: {
+      main: '#2196f3',
+    },
+    type: 'light',
+  },
 };
 
-export default function notification(state = initState, {type, payload}) {
+const customizeThemeDark = {
+  palette: {
+    codeStyle: monokaiSublime,
+    primary: {
+      main: '#2196f3',
+    },
+    type: 'dark',
+  },
+};
 
-  switch (type) {
-    case TOGGLE_THEME:
+const initState = createMuiTheme(customizeThemeLight);
 
-      return state.type === 'light'
-        ? ({
-          ...state,
-          backgroundColor: '#303030',
-          type: 'dark'
-        })
-        : initState
+export default function notification(state = initState, {type}) {
+
+  if (type === TOGGLE_THEME) {
+    return state.palette.type === 'light'
+      ? createMuiTheme(customizeThemeDark)
+      : initState
   }
 
   return state;

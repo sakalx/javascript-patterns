@@ -20,7 +20,9 @@ import {
   Title,
 } from './style';
 
-const Header = ({toggleTheme, toggleDrawer}) => {
+const Header = ({toggleTheme, toggleDrawer, location}) => {
+
+  const title = location.state && !!location.state.title && location.state.title || 'JavaScript';
 
   const handleToggleMenu = () => {
     toggleDrawer()();
@@ -36,14 +38,14 @@ const Header = ({toggleTheme, toggleDrawer}) => {
 
   return (
     <Root>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <MenuButton color="inherit" aria-label="Menu" onClick={handleToggleMenu}>
             <MenuIcon/>
           </MenuButton>
 
-          <Title variant="title" color="inherit">
-            // title goes here enjoy
+          <Title variant="headline" color="inherit">
+            {title}
           </Title>
 
           <Tooltip title="Toggle light/dark theme">

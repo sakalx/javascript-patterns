@@ -1,7 +1,6 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
-
-import {withTheme} from '@material-ui/core/styles';
+import {connect} from 'react-redux';
 
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -10,21 +9,22 @@ import {
   WrapLink,
 } from './style';
 
-const LinkTo = ({label, to, activeWhenExact, theme: {palette}}) => (
+const LinkTo = ({label, pathname, state, activeWhenExact, theme: {palette}}) => (
   <Route
-    path={to}
+    path={pathname}
     exact={activeWhenExact}
     children={({match}) => (
-      <WrapLink to={to}>
+      <WrapLink to={{pathname, state}}>
         <ListItem button>
-          <ListItemText inset
-                        primary={label}
-                        primaryTypographyProps={match && ({
-                          style: {
-                            color: palette.primary.main,
-                            fontWeight: 'bold',
-                          }
-                        })}
+          <ListItemText
+            primary={label}
+            style={{paddingLeft: 16}}
+            primaryTypographyProps={match && ({
+              style: {
+                color: palette.primary.main,
+                fontWeight: '500',
+              }
+            })}
           />
         </ListItem>
       </WrapLink>
@@ -32,4 +32,8 @@ const LinkTo = ({label, to, activeWhenExact, theme: {palette}}) => (
   />
 );
 
-export default withTheme()(LinkTo);
+const mapStateToProps = ({theme}) => ({
+  theme,
+});
+
+export default connect(mapStateToProps, null)(LinkTo);
