@@ -11,8 +11,12 @@ import LazyLoad from './components/lazy-load';
 import Header from './scenes/header';
 import DrawerMenu from './scenes/nav-menu';
 
-const Testing = LazyLoad({
-  loader: () => import('root/screens/function-declarations'),
+const Conditionals = LazyLoad({
+  loader: () => import('root/screens/general-patterns/conditionals'),
+});
+
+const FunctionDeclarations = LazyLoad({
+  loader: () => import('root/screens/general-patterns/function-declarations'),
 });
 
 class App extends React.PureComponent {
@@ -35,10 +39,8 @@ class App extends React.PureComponent {
             />
 
             <MainContent>
-              <Route path='/Conditionals' component={Testing}/>
-              <Route path={`/${allDash('Function Declarations')}`} render={prop =>
-                <h1> hhhhhhhhhhhhhh</h1>
-              }/>
+              <Route path='/Conditionals' component={Conditionals}/>
+              <Route path={`/${allDash('Function Declarations')}`} component={FunctionDeclarations}/>
             </MainContent>
 
           </React.Fragment>

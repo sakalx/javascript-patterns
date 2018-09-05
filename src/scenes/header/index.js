@@ -22,7 +22,7 @@ import {
 
 const Header = ({toggleTheme, toggleDrawer, location}) => {
 
-  const title = location.state && !!location.state.title && location.state.title || 'JavaScript';
+  const title = location.state && !!location.state.title && location.state.title || 'JavaScript Patterns';
 
   const handleToggleMenu = () => {
     toggleDrawer()();

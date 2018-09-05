@@ -11,22 +11,20 @@ const ScreenContent = ({
                          description,
                          descriptionVariant,
                          header,
-                         component,
                          title,
                          titleVariant,
                        }) => (
   <React.Fragment>
 
     <Typography
-      variant={titleVariant || (header ? 'display2' : 'body2')}
+      variant={titleVariant || (header ? 'display2' : 'title')}
       gutterBottom
     >
       {title}
     </Typography>
 
     <Description
-      component={component}
-      variant={descriptionVariant || (header ? 'headline' : 'body1')}
+      variant={descriptionVariant || (header ? 'headline' : 'subheading')}
       gutterBottom
     >
       {description || children}

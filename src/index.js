@@ -20,4 +20,4 @@ ReactDOM.render(
     </Provider>
 
   </React.Fragment>
-  , document.getElementById('js-info'));
+  , document.getElementById('app'));

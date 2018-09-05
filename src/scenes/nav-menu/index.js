@@ -44,7 +44,7 @@ class DrawerMenu extends React.PureComponent {
     <React.Fragment>
       <HomeLink to='/' onClick={() => this.toggleDrawer(false)()}>
         <HomeLinkTitle variant="title" color="textSecondary">
-          JS-INFO
+          JS-Patterns
         </HomeLinkTitle>
       </HomeLink>
       <Divider/>

@@ -5,11 +5,11 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 
 import Paper from '@material-ui/core/Paper';
 
-const CodeSnippet = ({theme, codeLines}) => (
+const CodeSnippet = ({theme, snippet}) => (
   <React.Fragment>
     <Paper elevation={1}>
       <SyntaxHighlighter language='javascript' style={theme.palette.codeStyle}>
-        {codeLines}
+        {String(snippet)}
       </SyntaxHighlighter>
     </Paper>
     <br/><br/>
