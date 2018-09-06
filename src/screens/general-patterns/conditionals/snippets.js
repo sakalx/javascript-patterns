@@ -1,22 +1,29 @@
-function normal() {
+const normal = () => (
+  `
   if (type === 'foo' || type === 'bar') {
-
+  
   }
-}
+  `
+);
 
-function alternative1() {
+const alternative1 = () => (
+  `
   if (/^(foo|bar)$/.test(type)) {
 
   }
-}
+  `
+);
 
-function alternative2() {
+const alternative2 = () => (
+  `
   if (({foo: 1, bar: 1})[type]) {
 
   }
-}
+  `
+);
 
-function alternative3() {
+const alternative3 = () => (
+  `
   if (value < 6) {
     if (value < 3) {
       if (value == 0) {
@@ -52,9 +59,11 @@ function alternative3() {
       }
     }
   }
-}
+  `
+);
 
-function alternative4() {
+const alternative4 = () => (
+  `
   if (value == 0) {
     return result0;
   } else if (value == 1) {
@@ -67,9 +76,11 @@ function alternative4() {
   const results = [result0, result1, result2];
   // return the correct result
   return results[value];
-}
+  `
+);
 
-function alternative5() {
+const alternative5 = () => (
+  `
   let
     type = 'foo',
     type2 = 'bar',
@@ -77,15 +88,20 @@ function alternative5() {
 
   type == 'foo' && result++;
   console.log(result); // 1
+
   !type == 'foo' || result++;
   console.log(result); // 2
+
   type == 'foo' && type2 == 'bar' && result++;
   console.log(result); //3
+
   type == 'foo' && type2 == 'bar' && result == 3 && (result = 0); //parentheses avoid "invalid assignment left-hand side" error
   console.log(result); //0
+
   type == 'OOF' || result++; //equivalent: type != 'OOF' && result++;
   console.log(result); //1
-}
+  `
+);
 
 export {
   normal,

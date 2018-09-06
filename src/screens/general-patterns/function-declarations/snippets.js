@@ -1,17 +1,33 @@
 const declaration = () => (
-  `function getData() {}`
+  `
+  function getData() {
+
+  }
+  `
 );
 
 const preferred = () => (
-  `const getData = function() {};`
+  `
+  const getData = function() {
+
+  };
+  `
 );
 
 const namedExpression = () => (
-  `const getData = function getData() {};`
+  `
+  const getData = function getData() {
+
+  };
+  `
 );
 
 const namedExpressionF = () => (
-  `const getData = function getDataF() {};`
+  `
+  const getData = function getDataF() {
+    
+  };
+  `
 );
 
 export {declaration, preferred, namedExpression, namedExpressionF};

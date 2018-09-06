@@ -6,18 +6,22 @@ import styled from 'styled-components';
 import {MuiThemeProvider} from '@material-ui/core/styles';
 
 import {allDash} from 'root/helpers/string-methods';
+import Foo from 'root/screens/general-patterns/parseint';
 
 import LazyLoad from './components/lazy-load';
 import Header from './scenes/header';
 import DrawerMenu from './scenes/nav-menu';
 
+
 const Conditionals = LazyLoad({
-  loader: () => import('root/screens/general-patterns/conditionals'),
+  loader: () => import('root/screens/general-patterns/parseint'),
 });
+
 
 const FunctionDeclarations = LazyLoad({
   loader: () => import('root/screens/general-patterns/function-declarations'),
 });
+
 
 class App extends React.PureComponent {
 

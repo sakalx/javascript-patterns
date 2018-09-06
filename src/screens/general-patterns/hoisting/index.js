@@ -4,32 +4,29 @@ import CodeSnippet from 'root/components/code-snippet';
 import Reference from 'root/components/reference';
 import ScreenContent from 'root/components/screen-content';
 
-import snippets from './snippets';
+import {antipattern, pattern} from './snippets';
 
-const Foo = () => (
+const Hoisting = () => (
   <React.Fragment>
     <ScreenContent
       header
-      title=""
-      description={``}
+      title="Hoisting"
+      description={`var statements anywhere in a function act as if the variables were declared at the top of the function`}
     />
+
+    <ScreenContent title="Antipattern"/>
+    <CodeSnippet snippet={antipattern()}/>
 
     <ScreenContent
-      title=""
-      description={``}
+      title="The preceding code snippet will behave as if it were implemented like so:"
     />
-    <CodeSnippet snippet={snippets}/>
+    <CodeSnippet snippet={pattern()}/>
 
-
-    <ScreenContent
-      title=""
-      description={``}
-    />
-    <CodeSnippet snippet={snippets}/>
-
-    <Reference list={[]}/>
+    <Reference list={[
+      'http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/',
+    ]}/>
 
   </React.Fragment>
 );
 
-export default Foo;
+export default Hoisting;
