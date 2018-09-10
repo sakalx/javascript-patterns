@@ -8,7 +8,7 @@ import {
 
 const LinkReferences = ({to, title}) => (
   <Link href={to || title} target="_blank">
-    <Typography variant="subheading" color="secondary">
+    <Typography variant="subheading" color="secondary" noWrap>
       {title}
     </Typography>
   </Link>

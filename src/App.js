@@ -13,6 +13,9 @@ import {allDash} from 'root/helpers/string-methods';
 
 import Header from './scenes/header';
 import Navigation from './scenes/navigation';
+import Footer from './scenes/footer';
+
+import Typography from '@material-ui/core/Typography';
 
 const screens = routers.reduce((acc, next) => [...acc, ...next.screens], []);
 
@@ -43,10 +46,13 @@ class App extends React.PureComponent {
                   component={screen.component}
                 />
               ))}
-
+              <CommentsTitle variant='display1'>
+                Comments
+              </CommentsTitle>
               <DiscussionEmbed config={disqus} shortname='javascript-patterns'/>
             </MainContent>
 
+            <Footer/>
 
           </React.Fragment>
         </Router>
@@ -58,6 +64,11 @@ class App extends React.PureComponent {
 const MainContent = styled('main')`
   padding: 100px 7vw;
 `;
+
+const CommentsTitle = styled(Typography)`
+  padding-top: 50px;
+`;
+
 
 const mapStateToProps = ({disqus, theme}) => ({
   disqus,

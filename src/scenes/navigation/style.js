@@ -10,9 +10,6 @@ import List from '@material-ui/core/List';
 const {theme} = store.getState();
 
 export const HomeLink = styled(Link)`
-  &:hover {
-    text-decoration: underline;
-  };
   color: ${theme.palette.primary.main};
   text-decoration: none;
 `;
@@ -20,6 +17,7 @@ export const HomeLink = styled(Link)`
 export const HomeLinkTitle = styled(Typography)`
   &:hover {
     color: ${theme.palette.primary.main};
+    text-decoration: underline;
   };
   padding: 12px 24px;
 `;
