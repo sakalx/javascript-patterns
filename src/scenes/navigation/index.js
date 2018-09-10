@@ -1,5 +1,9 @@
 import React from 'react';
 
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {loadDisqusComments} from 'root/redux-core/actions/disqus';
+
 import {allDash, camelCase} from 'root/helpers/string-methods';
 import routers from './routers';
 
@@ -24,15 +28,23 @@ const menuTitles = routers.reduce((acc, next) => {
   return acc
 }, {});
 
-
 class Navigation extends React.PureComponent {
   state = {
     open: false,
     ...menuTitles,
   };
 
-  toggleDrawer = (open = true) => () => {
+  componentDidMount() {
+    this.props.toggleDrawer(this.handleToggleDrawer);
+  }
+
+  handleToggleDrawer = (open = true) => () => {
     this.setState({open});
+  };
+
+  handleLinkToHome = () => {
+    this.handleToggleDrawer(false)();
+    this.props.loadDisqusComments()
   };
 
   handleExtentMenu = menu => {
@@ -41,7 +53,7 @@ class Navigation extends React.PureComponent {
 
   renderSubHeader = () => (
     <React.Fragment>
-      <HomeLink to='/' onClick={() => this.toggleDrawer(false)()}>
+      <HomeLink to='/' onClick={this.handleLinkToHome}>
         <HomeLinkTitle variant="title" color="textSecondary">
           JS-Patterns
         </HomeLinkTitle>
@@ -54,7 +66,7 @@ class Navigation extends React.PureComponent {
     const {open} = this.state;
 
     return (
-      <Drawer open={open} onClose={this.toggleDrawer(false)}>
+      <Drawer open={open} onClose={this.handleToggleDrawer(false)}>
         <NavList component="nav" subheader={this.renderSubHeader()}>
 
           {routers.map(item => {
@@ -72,19 +84,17 @@ class Navigation extends React.PureComponent {
                   <List
                     component="div"
                     disablePadding
-                    onClick={() => this.toggleDrawer(false)()}
-                    onKeyDown={() => this.toggleDrawer(false)()}
+                    onClick={() => this.handleToggleDrawer(false)()}
+                    onKeyDown={() => this.handleToggleDrawer(false)()}
                     role="button"
                   >
                     {item.screens.map(screen => (
                       <LinkTo
                         key={screen.label}
-                        label={screen.label}
                         pathname={`/${allDash(screen.label)}`}
                         state={{title: screen.label}}
                       />
-                    ))
-                    }
+                    ))}
                   </List>
                 </Collapse>
               </div>
@@ -97,4 +107,12 @@ class Navigation extends React.PureComponent {
   }
 }
 
-export default Navigation;
+const mapStateToProps = ({disqus}) => ({
+  disqus,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  loadDisqusComments,
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navigation);

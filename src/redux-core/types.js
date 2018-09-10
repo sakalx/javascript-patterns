@@ -1,1 +1,3 @@
 export const TOGGLE_THEME = 'TOGGLE_THEME';
+
+export const LOAD_DISQUS = 'LOAD_DISQUS_COMMENTS';

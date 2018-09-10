@@ -2,6 +2,8 @@ import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import routers from 'root/scenes/navigation/routers';
 
+import {DiscussionEmbed} from 'disqus-react';
+
 import {connect} from 'react-redux';
 
 import styled from 'styled-components';
@@ -17,7 +19,7 @@ const screens = routers.reduce((acc, next) => [...acc, ...next.screens], []);
 class App extends React.PureComponent {
 
   render() {
-    const {theme} = this.props;
+    const {disqus, theme} = this.props;
     document.body.style.backgroundColor = theme.palette.background.default;
 
     return (
@@ -27,8 +29,8 @@ class App extends React.PureComponent {
 
             <Route path='/' render={prop => (
               <React.Fragment>
-                <Header {...prop} toggleDrawer={() => this.navigation.toggleDrawer()}/>
-                <Navigation ref={drawer => this.navigation = drawer}/>
+                <Header {...prop} toggleDrawer={() => this.handleDrawer()}/>
+                <Navigation toggleDrawer={click => this.handleDrawer = click}/>
               </React.Fragment>
             )}
             />
@@ -41,7 +43,10 @@ class App extends React.PureComponent {
                   component={screen.component}
                 />
               ))}
+
+              <DiscussionEmbed config={disqus} shortname='javascript-patterns'/>
             </MainContent>
+
 
           </React.Fragment>
         </Router>
@@ -54,7 +59,8 @@ const MainContent = styled('main')`
   padding: 100px 7vw;
 `;
 
-const mapStateToProps = ({theme}) => ({
+const mapStateToProps = ({disqus, theme}) => ({
+  disqus,
   theme,
 });
 
