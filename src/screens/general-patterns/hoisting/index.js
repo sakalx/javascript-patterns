@@ -4,7 +4,10 @@ import CodeSnippet from 'root/components/code-snippet';
 import Reference from 'root/components/reference';
 import ScreenContent from 'root/components/screen-content';
 
-import {antipattern, pattern} from './snippets';
+import {
+  antipattern,
+  pattern,
+} from './snippets';
 
 const Hoisting = () => (
   <React.Fragment>

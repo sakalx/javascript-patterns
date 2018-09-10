@@ -45,4 +45,8 @@ const preferred2 = () => (
   `
 );
 
-export {antipattern, preferred1, preferred2}
+export {
+  antipattern,
+  preferred1,
+  preferred2,
+}

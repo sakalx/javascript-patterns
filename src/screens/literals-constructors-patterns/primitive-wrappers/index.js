@@ -4,32 +4,49 @@ import CodeSnippet from 'root/components/code-snippet';
 import Reference from 'root/components/reference';
 import ScreenContent from 'root/components/screen-content';
 
-import snippets from './snippets';
+import {
+  antipattern,
+  preferred,
+  primitiveString,
+  primitiveWrapper,
+} from './snippets';
 
-const Foo = () => (
+const PrimitiveWrappers = () => (
   <React.Fragment>
     <ScreenContent
       header
-      title=""
-      description={``}
+      title="Primitive Wrappers"
+      description={`JavaScript has 3 primitive wrapper objects: number, string, boolean`}
     />
 
     <ScreenContent
-      title=""
-      description={``}
+      title="Antipattern"
+      description={`With wrappers`}
     />
-    <CodeSnippet snippet={snippets}/>
-
+    <CodeSnippet snippet={antipattern()}/>
 
     <ScreenContent
-      title=""
-      description={``}
+      title="Preferred"
+      description={`Without wrappers`}
     />
-    <CodeSnippet snippet={snippets}/>
+    <CodeSnippet snippet={preferred()}/>
 
-    <Reference list={[]}/>
+    <ScreenContent
+      description={`Only use primitive wrappers when you want to augment the value and persist state
+      `}
+    />
+
+    <ScreenContent title="Primitive string"/>
+    <CodeSnippet snippet={primitiveString()}/>
+
+    <ScreenContent title="Primitive wrapper"/>
+    <CodeSnippet snippet={primitiveWrapper()}/>
+
+    <Reference list={[
+      'http://shop.oreilly.com/product/9780596806767.do',
+    ]}/>
 
   </React.Fragment>
 );
 
-export default Foo;
+export default PrimitiveWrappers;

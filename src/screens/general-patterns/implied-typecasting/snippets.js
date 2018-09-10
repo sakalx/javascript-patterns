@@ -18,5 +18,7 @@ const preferred = () => (
 `
 );
 
-
-export {antipattern, preferred}
+export {
+  antipattern,
+  preferred,
+}

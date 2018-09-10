@@ -4,32 +4,49 @@ import CodeSnippet from 'root/components/code-snippet';
 import Reference from 'root/components/reference';
 import ScreenContent from 'root/components/screen-content';
 
-import snippets from './snippets';
+import {
+  example,
+  parentConstructor,
+  adding,
+  empty,
+  inheritance,
+  drawback1,
+  drawback2,
+} from './snippets';
 
-const Foo = () => (
+const DefaultPattern = () => (
   <React.Fragment>
     <ScreenContent
       header
-      title=""
-      description={``}
+      title="Classical Pattern #1 - The Default Pattern (a pattern that should be generally avoided)"
+      description={`Create an object using the Parent() constructor and assign this object to the Child()'s prototype`}
     />
 
-    <ScreenContent
-      title=""
-      description={``}
-    />
-    <CodeSnippet snippet={snippets}/>
+    <CodeSnippet snippet={example()}/>
 
+    <ScreenContent title="The parent constructor"/>
+    <CodeSnippet snippet={parentConstructor()}/>
 
-    <ScreenContent
-      title=""
-      description={``}
-    />
-    <CodeSnippet snippet={snippets}/>
+    <ScreenContent title="Adding functionality to the prototype"/>
+    <CodeSnippet snippet={adding()}/>
 
-    <Reference list={[]}/>
+    <ScreenContent title="Empty child constructor"/>
+    <CodeSnippet snippet={empty()}/>
+
+    <ScreenContent title="Inheritance magic happens here"/>
+    <CodeSnippet snippet={inheritance()}/>
+
+    <ScreenContent title="Drawback 1: own properties added to `this` is inherited"/>
+    <CodeSnippet snippet={drawback1()}/>
+
+    <ScreenContent title="Drawback 2: it doesn't enable you to pass parameters to the child constructor"/>
+    <CodeSnippet snippet={drawback2()}/>
+
+    <Reference list={[
+      'http://shop.oreilly.com/product/9780596806767.do',
+    ]}/>
 
   </React.Fragment>
 );
 
-export default Foo;
+export default DefaultPattern;

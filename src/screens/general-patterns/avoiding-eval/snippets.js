@@ -1,7 +1,7 @@
 const antipattern1 = () => (
   `
   var property = "name",
-      obj = { name: "John" };
+      obj = {name: "John"};
       
   alert(eval("obj." + property));
   `

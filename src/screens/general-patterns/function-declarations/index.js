@@ -4,7 +4,12 @@ import CodeSnippet from 'root/components/code-snippet';
 import Reference from 'root/components/reference';
 import ScreenContent from 'root/components/screen-content';
 
-import {declaration, preferred, namedExpression, namedExpressionF} from './snippets';
+import {
+  declaration,
+  preferred,
+  namedExpression,
+  namedExpressionF,
+} from './snippets';
 
 const FunctionDeclarations = () => (
   <React.Fragment>

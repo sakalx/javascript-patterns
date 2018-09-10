@@ -1,3 +1,15 @@
-const snippets = {};
+const conf = () => (
+  `
+  var conf = {
+    username: "Shichuan",
+    first: "Chuan",
+    last: "Shi"
+  };
+  
+  addPerson(conf);
+`
+);
 
-export default snippets;
+export {
+  conf,
+};

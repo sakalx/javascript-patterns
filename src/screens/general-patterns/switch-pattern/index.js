@@ -4,7 +4,11 @@ import CodeSnippet from 'root/components/code-snippet';
 import Reference from 'root/components/reference';
 import ScreenContent from 'root/components/screen-content';
 
-import {antipattern, preferred1, preferred2} from './snippets';
+import {
+  antipattern,
+  preferred1,
+  preferred2,
+} from './snippets';
 
 const SwitchPattern = () => (
   <React.Fragment>

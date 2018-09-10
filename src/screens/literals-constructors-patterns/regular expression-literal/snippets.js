@@ -1,3 +1,16 @@
-const snippets = {};
+const antipattern = () => (
+  `
+  var re = new RegExp("\\\\\\\\", "gm");
+  `
+);
 
-export default snippets;
+const preferred = () => (
+  `
+  var re = /\\\\/gm;
+  `
+);
+
+export {
+  antipattern,
+  preferred,
+}

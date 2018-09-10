@@ -25,6 +25,7 @@ const alternative2 = () => (
 const alternative3 = () => (
   `
   if (value < 6) {
+
     if (value < 3) {
       if (value == 0) {
         return result0;
@@ -33,7 +34,9 @@ const alternative3 = () => (
       } else {
         return result2;
       }
+
     } else {
+
       if (value == 3) {
         return result3;
       } else if (value == 4) {
@@ -41,14 +44,17 @@ const alternative3 = () => (
       } else {
         return result5;
       }
+
     }
   } else {
+
     if (value < 8) {
       if (value == 6) {
         return result6;
       } else {
         return result7;
       }
+
     } else {
       if (value == 8) {
         return result8;
@@ -58,6 +64,7 @@ const alternative3 = () => (
         return result10;
       }
     }
+
   }
   `
 );
@@ -74,6 +81,7 @@ const alternative4 = () => (
 
   // define the array of results
   const results = [result0, result1, result2];
+  
   // return the correct result
   return results[value];
   `

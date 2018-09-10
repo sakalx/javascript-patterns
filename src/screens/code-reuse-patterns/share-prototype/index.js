@@ -4,32 +4,37 @@ import CodeSnippet from 'root/components/code-snippet';
 import Reference from 'root/components/reference';
 import ScreenContent from 'root/components/screen-content';
 
-import snippets from './snippets';
+import {
+  example,
+  parentConstructor,
+  adding,
+  child,
+} from './snippets';
 
-const Foo = () => (
+const SharePrototype = () => (
   <React.Fragment>
     <ScreenContent
       header
-      title=""
-      description={``}
+      title="Classical Pattern #4 - Share the Prototype (a pattern that should be generally avoided)"
+      description={`First borrow the constructor and then also set the child's prototype to point to a new instance of the constructor`}
     />
 
-    <ScreenContent
-      title=""
-      description={``}
-    />
-    <CodeSnippet snippet={snippets}/>
+    <CodeSnippet snippet={example()}/>
 
+    <ScreenContent title="The parent constructor"/>
+    <CodeSnippet snippet={parentConstructor()}/>
 
-    <ScreenContent
-      title=""
-      description={``}
-    />
-    <CodeSnippet snippet={snippets}/>
+    <ScreenContent title="Adding functionality to the prototype"/>
+    <CodeSnippet snippet={adding()}/>
 
-    <Reference list={[]}/>
+    <ScreenContent title="child constructor"/>
+    <CodeSnippet snippet={child()}/>
+
+    <Reference list={[
+      'http://shop.oreilly.com/product/9780596806767.do',
+    ]}/>
 
   </React.Fragment>
 );
 
-export default Foo;
+export default SharePrototype;

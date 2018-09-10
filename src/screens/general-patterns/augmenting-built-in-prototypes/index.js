@@ -4,7 +4,9 @@ import CodeSnippet from 'root/components/code-snippet';
 import Reference from 'root/components/reference';
 import ScreenContent from 'root/components/screen-content';
 
-import {example} from './snippets';
+import {
+  example,
+} from './snippets';
 
 const BuiltInPrototypes = () => (
   <React.Fragment>

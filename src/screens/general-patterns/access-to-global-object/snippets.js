@@ -7,4 +7,6 @@ const accessToGlobalObject = () => (
 );
 
 
-export {accessToGlobalObject};
+export {
+  accessToGlobalObject,
+};

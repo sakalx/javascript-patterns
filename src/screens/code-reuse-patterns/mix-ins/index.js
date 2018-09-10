@@ -4,32 +4,28 @@ import CodeSnippet from 'root/components/code-snippet';
 import Reference from 'root/components/reference';
 import ScreenContent from 'root/components/screen-content';
 
-import snippets from './snippets';
+import {
+  mix,
+  cake,
+} from './snippets';
 
-const Foo = () => (
+const MixIns = () => (
   <React.Fragment>
     <ScreenContent
       header
-      title=""
-      description={``}
+      title="Mix-ins"
+      description={`Copy from any number of objects and mix them all into a new object`}
     />
 
-    <ScreenContent
-      title=""
-      description={``}
-    />
-    <CodeSnippet snippet={snippets}/>
+    <CodeSnippet snippet={mix()}/>
+    <CodeSnippet snippet={cake()}/>
 
-
-    <ScreenContent
-      title=""
-      description={``}
-    />
-    <CodeSnippet snippet={snippets}/>
-
-    <Reference list={[]}/>
+    <Reference list={[
+      'http://addyosmani.com/resources/essentialjsdesignpatterns/book/#mixinpatternjavascript',
+      'http://shop.oreilly.com/product/9780596806767.do',
+    ]}/>
 
   </React.Fragment>
 );
 
-export default Foo;
+export default MixIns;

@@ -4,32 +4,26 @@ import CodeSnippet from 'root/components/code-snippet';
 import Reference from 'root/components/reference';
 import ScreenContent from 'root/components/screen-content';
 
-import snippets from './snippets';
+import {
+  conf,
+} from './snippets';
 
-const Foo = () => (
+const ConfigurationObjects = () => (
   <React.Fragment>
     <ScreenContent
       header
-      title=""
-      description={``}
+      title="Configuration objects"
+      description={`Keep control of function arguments and makes it easily configurable`}
     />
 
-    <ScreenContent
-      title=""
-      description={``}
-    />
-    <CodeSnippet snippet={snippets}/>
+    <CodeSnippet snippet={conf()}/>
 
-
-    <ScreenContent
-      title=""
-      description={``}
-    />
-    <CodeSnippet snippet={snippets}/>
-
-    <Reference list={[]}/>
+    <Reference list={[
+      'http://www.jspatterns.com/',
+      'http://shop.oreilly.com/product/9780596806767.do?sortby=publicationDate',
+    ]}/>
 
   </React.Fragment>
 );
 
-export default Foo;
+export default ConfigurationObjects;

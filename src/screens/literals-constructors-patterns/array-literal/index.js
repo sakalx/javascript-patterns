@@ -4,32 +4,30 @@ import CodeSnippet from 'root/components/code-snippet';
 import Reference from 'root/components/reference';
 import ScreenContent from 'root/components/screen-content';
 
-import snippets from './snippets';
+import {
+  antipattern,
+  preferred,
+} from './snippets';
 
-const Foo = () => (
+const ArrayLiteral = () => (
   <React.Fragment>
     <ScreenContent
       header
-      title=""
-      description={``}
+      title="Array literal"
+      description={`Use array literal notation to avoid potential errors when creating dynamic arrays at runtime`}
     />
 
-    <ScreenContent
-      title=""
-      description={``}
-    />
-    <CodeSnippet snippet={snippets}/>
+    <ScreenContent title="Antipattern"/>
+    <CodeSnippet snippet={antipattern()}/>
 
+    <ScreenContent title="Preferred"/>
+    <CodeSnippet snippet={preferred()}/>
 
-    <ScreenContent
-      title=""
-      description={``}
-    />
-    <CodeSnippet snippet={snippets}/>
-
-    <Reference list={[]}/>
+    <Reference list={[
+      'http://shop.oreilly.com/product/9780596806767.do',
+    ]}/>
 
   </React.Fragment>
 );
 
-export default Foo;
+export default ArrayLiteral;

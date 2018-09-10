@@ -5,7 +5,9 @@ import LinkReferences from 'root/components/link-reference';
 import Reference from 'root/components/reference';
 import ScreenContent from 'root/components/screen-content';
 
-import {accessToGlobalObject} from './snippets';
+import {
+  accessToGlobalObject,
+} from './snippets';
 
 const AccessToGlobalObject = () => (
   <React.Fragment>

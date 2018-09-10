@@ -30,4 +30,9 @@ const namedExpressionF = () => (
   `
 );
 
-export {declaration, preferred, namedExpression, namedExpressionF};
+export {
+  declaration,
+  preferred,
+  namedExpression,
+  namedExpressionF,
+}

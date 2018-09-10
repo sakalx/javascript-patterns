@@ -4,7 +4,10 @@ import CodeSnippet from 'root/components/code-snippet';
 import Reference from 'root/components/reference';
 import ScreenContent from 'root/components/screen-content';
 
-import {pattern, preferredWay} from './snippets';
+import {
+  pattern,
+  preferredWay,
+} from './snippets';
 
 const SingleVarPattern = () => (
   <React.Fragment>

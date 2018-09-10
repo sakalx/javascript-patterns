@@ -10,6 +10,7 @@ const antipattern = () => (
     var willchange = "local"; // This rescopes willchange inside this function
     alert(willchange); // "local"
   }
+
   func_bad();
   `
 );
@@ -29,9 +30,12 @@ const pattern = () => (
     willchange = "local";
     alert(willchange); // "local"
   }
+
   func();
 `
 );
 
-
-export {antipattern, pattern}
+export {
+  antipattern,
+  pattern,
+}

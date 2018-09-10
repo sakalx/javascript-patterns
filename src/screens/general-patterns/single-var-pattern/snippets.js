@@ -7,12 +7,14 @@ const pattern = () => (
       , myobject = {}
       , i
       , j;
+      
     // function body...
   }
   
   function updateElement() {
     var el = document.getElementById("result")
       , style = el.style;
+
     // do something with el and style...
   }
   `
@@ -27,10 +29,13 @@ const preferredWay = () => (
       , myobject = {}
       , i
       , j;
+
     // function body...
   }
   `
 );
 
-
-export {pattern, preferredWay};
+export {
+  pattern,
+  preferredWay,
+};

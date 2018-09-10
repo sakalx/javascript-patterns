@@ -1,27 +1,18 @@
 import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
+import routers from 'root/scenes/navigation/routers';
+
 import {connect} from 'react-redux';
 
 import styled from 'styled-components';
 import {MuiThemeProvider} from '@material-ui/core/styles';
 
 import {allDash} from 'root/helpers/string-methods';
-import Foo from 'root/screens/general-patterns/parseint';
 
-import LazyLoad from './components/lazy-load';
 import Header from './scenes/header';
-import DrawerMenu from './scenes/nav-menu';
+import Navigation from './scenes/navigation';
 
-
-const Conditionals = LazyLoad({
-  loader: () => import('root/screens/general-patterns/parseint'),
-});
-
-
-const FunctionDeclarations = LazyLoad({
-  loader: () => import('root/screens/general-patterns/function-declarations'),
-});
-
+const screens = routers.reduce((acc, next) => [...acc, ...next.screens], []);
 
 class App extends React.PureComponent {
 
@@ -36,15 +27,20 @@ class App extends React.PureComponent {
 
             <Route path='/' render={prop => (
               <React.Fragment>
-                <Header {...prop} toggleDrawer={() => this.drawerMenu.toggleDrawer()}/>
-                <DrawerMenu ref={drawer => this.drawerMenu = drawer}/>
+                <Header {...prop} toggleDrawer={() => this.navigation.toggleDrawer()}/>
+                <Navigation ref={drawer => this.navigation = drawer}/>
               </React.Fragment>
             )}
             />
 
             <MainContent>
-              <Route path='/Conditionals' component={Conditionals}/>
-              <Route path={`/${allDash('Function Declarations')}`} component={FunctionDeclarations}/>
+              {screens.map(screen => (
+                <Route
+                  key={screen["label"]}
+                  path={`/${allDash(screen.label)}`}
+                  component={screen.component}
+                />
+              ))}
             </MainContent>
 
           </React.Fragment>

@@ -28,4 +28,4 @@ export {
   pattern1,
   pattern2,
   pattern3,
-};
+}

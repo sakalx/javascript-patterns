@@ -1,3 +1,25 @@
-const snippets = {};
+const inputJSON = () => (
+  `
+  var jstr = '{"myKey": "my value"}';
+  `
+);
 
-export default snippets;
+const antipattern = () => (
+  `
+  var data = eval('(' + jstr + ')');
+  `
+);
+
+const preferred = () => (
+  `
+  var data = JSON.parse(jstr);
+
+  console.log(data.myKey); // "my value"
+  `
+);
+
+export {
+  inputJSON,
+  antipattern,
+  preferred,
+}

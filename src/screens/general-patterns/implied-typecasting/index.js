@@ -4,7 +4,10 @@ import CodeSnippet from 'root/components/code-snippet';
 import Reference from 'root/components/reference';
 import ScreenContent from 'root/components/screen-content';
 
-import {antipattern, preferred} from './snippets';
+import {
+  antipattern,
+  preferred,
+} from './snippets';
 
 const ImpliedTypecasting = () => (
   <React.Fragment>

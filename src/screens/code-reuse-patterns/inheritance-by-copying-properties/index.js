@@ -4,32 +4,26 @@ import CodeSnippet from 'root/components/code-snippet';
 import Reference from 'root/components/reference';
 import ScreenContent from 'root/components/screen-content';
 
-import snippets from './snippets';
+import {
+  copy,
+  deepCopy,
+} from './snippets';
 
-const Foo = () => (
+const InheritanceCopyingProperties = () => (
   <React.Fragment>
     <ScreenContent
       header
-      title=""
-      description={``}
+      title="Inheritance by Copying Properties"
+      description={`An object gets functionality from another object, simply by copying it`}
     />
 
-    <ScreenContent
-      title=""
-      description={``}
-    />
-    <CodeSnippet snippet={snippets}/>
+    <ScreenContent title="Shallow copy"/>
+    <CodeSnippet snippet={copy()}/>
 
-
-    <ScreenContent
-      title=""
-      description={``}
-    />
-    <CodeSnippet snippet={snippets}/>
-
-    <Reference list={[]}/>
+    <ScreenContent title="Deep copy"/>
+    <CodeSnippet snippet={deepCopy()}/>
 
   </React.Fragment>
 );
 
-export default Foo;
+export default InheritanceCopyingProperties;

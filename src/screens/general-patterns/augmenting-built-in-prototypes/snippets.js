@@ -8,4 +8,6 @@ const example = () => (
   `
 );
 
-export {example}
+export {
+  example,
+}

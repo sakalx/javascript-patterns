@@ -4,32 +4,30 @@ import CodeSnippet from 'root/components/code-snippet';
 import Reference from 'root/components/reference';
 import ScreenContent from 'root/components/screen-content';
 
-import snippets from './snippets';
+import {
+  partialAny,
+  legitimate,
+} from './snippets';
 
-const Foo = () => (
+const PartialApplication = () => (
   <React.Fragment>
     <ScreenContent
       header
-      title=""
-      description={``}
+      title="Partial application"
+      description={`The process of fixing a number of arguments to a function, producing another function of smaller arity`}
     />
 
-    <ScreenContent
-      title=""
-      description={``}
-    />
-    <CodeSnippet snippet={snippets}/>
+    <CodeSnippet snippet={partialAny()}/>
 
 
-    <ScreenContent
-      title=""
-      description={``}
-    />
-    <CodeSnippet snippet={snippets}/>
+    <ScreenContent title="Slightly more legitimate example"/>
+    <CodeSnippet snippet={legitimate()}/>
 
-    <Reference list={[]}/>
+    <Reference list={[
+      'http://msdn.microsoft.com/en-us/magazine/gg575560.aspx',
+    ]}/>
 
   </React.Fragment>
 );
 
-export default Foo;
+export default PartialApplication;

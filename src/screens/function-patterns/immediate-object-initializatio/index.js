@@ -4,32 +4,26 @@ import CodeSnippet from 'root/components/code-snippet';
 import Reference from 'root/components/reference';
 import ScreenContent from 'root/components/screen-content';
 
-import snippets from './snippets';
+import {
+  pattern,
+} from './snippets';
 
-const Foo = () => (
+const ImmediateObjectInitialization = () => (
   <React.Fragment>
     <ScreenContent
       header
-      title=""
-      description={``}
+      title="Immediate object initialization"
+      description={`This pattern is mainly suitable for one-off tasks`}
     />
 
-    <ScreenContent
-      title=""
-      description={``}
-    />
-    <CodeSnippet snippet={snippets}/>
+    <CodeSnippet snippet={pattern()}/>
 
-
-    <ScreenContent
-      title=""
-      description={``}
-    />
-    <CodeSnippet snippet={snippets}/>
-
-    <Reference list={[]}/>
+    <Reference list={[
+      'http://www.jspatterns.com/',
+      'http://shop.oreilly.com/product/9780596806767.do?sortby=publicationDate',
+    ]}/>
 
   </React.Fragment>
 );
 
-export default Foo;
+export default ImmediateObjectInitialization;

@@ -1,3 +1,17 @@
-const snippets = {};
+const antipattern = () => (
+  `
+  var a = new Array();
+  `
+);
 
-export default snippets;
+const preferred = () => (
+  `
+  var a = [];
+  `
+);
+
+
+export {
+  antipattern,
+  preferred,
+}
