@@ -1,9 +1,5 @@
 import React from 'react';
 
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
-import {loadDisqusComments} from 'root/redux-core/actions/disqus';
-
 import {allDash, camelCase} from 'root/helpers/string-methods';
 import routers from './routers';
 
@@ -42,18 +38,15 @@ class Navigation extends React.PureComponent {
     this.setState({open});
   };
 
-  handleLinkToHome = () => {
-    this.handleToggleDrawer(false)();
-    this.props.loadDisqusComments()
-  };
-
   handleExtentMenu = menu => {
     this.setState(state => ({[menu]: !state[menu]}));
   };
 
   renderSubHeader = () => (
     <React.Fragment>
-      <HomeLink to='/' onClick={this.handleLinkToHome}>
+      <HomeLink to='/'
+                onClick={() => this.handleToggleDrawer(false)()}
+      >
         <HomeLinkTitle variant="title" color="textSecondary">
           JS-Patterns
         </HomeLinkTitle>
@@ -99,20 +92,11 @@ class Navigation extends React.PureComponent {
                 </Collapse>
               </div>
             )
-          })
-          }
+          })}
         </NavList>
       </Drawer>
     );
   }
 }
 
-const mapStateToProps = ({disqus}) => ({
-  disqus,
-});
-
-const mapDispatchToProps = dispatch => bindActionCreators({
-  loadDisqusComments,
-}, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)(Navigation);
+export default Navigation;

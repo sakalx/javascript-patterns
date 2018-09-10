@@ -9,7 +9,7 @@ const initState = {
 export default function disqus(state = initState, {type, payload}) {
 
   if (type === LOAD_DISQUS) {
-    return payload ? payload : initState;
+    return payload;
   }
 
   return state;

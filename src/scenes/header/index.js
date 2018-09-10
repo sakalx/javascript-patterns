@@ -2,6 +2,7 @@ import React from 'react';
 
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import {loadDisqusComments} from 'root/redux-core/actions/disqus';
 import {toggleTheme} from 'root/redux-core/actions/theme';
 
 import {githubIco, lightBulbIco} from 'root/static/icons';
@@ -20,27 +21,39 @@ import {
   Title,
 } from './style';
 
-const Header = ({toggleTheme, toggleDrawer, location}) => {
+let locationPath;
 
-  const title = location.state && !!location.state.title && location.state.title || 'JavaScript Patterns';
+const Header = ({loadDisqusComments, toggleTheme, toggleDrawer, location}) => {
 
-  const handleToggleMenu = () => {
-    toggleDrawer()();
+  const title = location.state && location.state.title || 'JavaScript Patterns';
+
+  const hasChangeLocation = location.pathname !== locationPath;
+
+  const handleDisqus = () => {
+
+    const disqusConfig = {
+      identifier: `UID${location.pathname}`,
+      title,
+      url: `https://patterns-js.firebaseapp.com${location.pathname}`,
+    };
+
+    loadDisqusComments(disqusConfig)
   };
 
-  const handleToggleTheme = () => {
-    toggleTheme();
-  };
-
-  const handleOpenGithub = () => {
-    window.open('https://github.com/sakalx/js-info', '_blank');
-  };
+  if (hasChangeLocation) {
+    locationPath = location.pathname;
+    handleDisqus();
+  }
 
   return (
     <Root>
       <AppBar position="fixed">
         <Toolbar>
-          <MenuButton color="inherit" aria-label="Menu" onClick={handleToggleMenu}>
+          <MenuButton
+            aria-label="Menu"
+            color="inherit"
+            onClick={() => toggleDrawer()()}
+          >
             <MenuIcon/>
           </MenuButton>
 
@@ -49,7 +62,7 @@ const Header = ({toggleTheme, toggleDrawer, location}) => {
           </Title>
 
           <Tooltip title="Toggle light/dark theme">
-            <IconButton color="inherit" onClick={handleToggleTheme}>
+            <IconButton color="inherit" onClick={toggleTheme}>
               <SvgIcon viewBox="0 0 24 24" color="inherit">
                 <path d={lightBulbIco}/>
               </SvgIcon>
@@ -57,7 +70,10 @@ const Header = ({toggleTheme, toggleDrawer, location}) => {
           </Tooltip>
 
           <Tooltip title="GitHub repository">
-            <IconButton color="inherit" onClick={handleOpenGithub}>
+            <IconButton
+              color="inherit"
+              onClick={() => window.open('https://github.com/sakalx/js-info', '_blank')}
+            >
               <SvgIcon viewBox="0 0 24 24" color="inherit">
                 <path d={githubIco}/>
               </SvgIcon>
@@ -71,6 +87,7 @@ const Header = ({toggleTheme, toggleDrawer, location}) => {
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
+  loadDisqusComments,
   toggleTheme,
 }, dispatch);
 
