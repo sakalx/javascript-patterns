@@ -7,7 +7,10 @@ const
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   path = require('path'),
   webpack = require('webpack'),
-  WebpackPwaManifest = require('webpack-pwa-manifest');
+  WebpackPwaManifest = require('webpack-pwa-manifest'),
+  SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+
+const PUBLIC = 'https://patterns-js.firebaseapp.com/';
 
 const
   develop = 'src',
@@ -60,18 +63,25 @@ const uglifyJs = new webpack.optimize.UglifyJsPlugin({
 
 const pwaManifest = new WebpackPwaManifest({
   name: 'JavaScript patterns',
-  short_name: 'Js-info',
-  description: 'JavaScript patterns explanation',
+  short_name: 'Js-patterns',
+  description: 'JavaScript patterns examples',
   background_color: '#2196f3',
   theme_color: '#2196f3',
   start_url: '/',
-  icons: [
-    {
-      src: path.resolve(`./${develop}/static/favicon/logo.png`,),
-      sizes: [96, 128, 192, 256, 384, 512],
-      destination: path.join('static', 'icons')
-    }
-  ]
+  icons: [{
+    src: path.resolve(`./${develop}/static/favicon/logo.png`,),
+    sizes: [96, 128, 192, 256, 384, 512],
+    destination: path.join('static', 'icons')
+  }]
+});
+
+const SW = new SWPrecacheWebpackPlugin({
+  cacheId: 'javascript-patterns',
+  dontCacheBustUrlsMatching: /\.\w{8}\./,
+  filename: 'service-worker.js',
+  minify: true,
+  navigateFallback: PUBLIC + 'index.html',
+  staticFileGlobsIgnorePatterns: [/\.map$/],
 });
 
 const definePlugin = new webpack.DefinePlugin({
@@ -137,6 +147,7 @@ const config = {
     path: DIST_DIR + '/',
     filename: 'js/[name].[chunkhash].js',
     sourceMapFilename: '[file].map',
+    publicPath: PUBLIC,
   },
 
   module: {
@@ -192,10 +203,11 @@ const config = {
     cleanFolderProd,
     commonsChunk,
     definePlugin,
-    // favicon,
+    favicon,
     htmlIndex,
     uglifyJs,
-    // pwaManifest,
+    pwaManifest,
+    SW,
   ] : [
     commonsChunk,
     htmlIndex,

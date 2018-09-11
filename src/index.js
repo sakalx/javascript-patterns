@@ -9,6 +9,12 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import ErrorBoundary from './components/error-boundary';
 import App from './App';
 
+(function () {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+})();
+
 ReactDOM.render(
   <React.Fragment>
     <CssBaseline/>

@@ -51,7 +51,7 @@ class App extends React.PureComponent {
 
             <Disqus component='section' elevation={1}>
               <Typography variant='display1'>
-                Comments {theme.palette.background.default}
+                Comments
               </Typography>
               <DiscussionEmbed foo={theme.palette.background.default} config={disqus} shortname='javascript-patterns'/>
             </Disqus>
@@ -67,7 +67,7 @@ class App extends React.PureComponent {
 
 const MainContent = styled('main')`
   margin-bottom: 15px;
-  min-height: 100vh;
+ // min-height: 100vh;
   padding: 100px 7vw 15px;
 `;
 
