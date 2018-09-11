@@ -1,5 +1,4 @@
 const isProd = process.env.NODE_ENV === 'production';
-const sourceMap = isProd ? 'nosources-source-map' : 'eval-source-map';
 
 const
   CleanWebpackPlugin = require('clean-webpack-plugin'),
@@ -10,15 +9,17 @@ const
   WebpackPwaManifest = require('webpack-pwa-manifest'),
   SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
-const PUBLIC = 'https://patterns-js.firebaseapp.com/';
-
 const
   develop = 'src',
-  production = 'public';
+  production = 'public',
+  PUBLIC_PATH = 'https://patterns-js.firebaseapp.com/';
 
 const
   SRC_DIR = path.join(__dirname, develop),
   DIST_DIR = path.join(__dirname, production);
+
+const sourceMap = isProd ? 'nosources-source-map' : 'eval-source-map';
+const publicPath = isProd ? PUBLIC_PATH : '/';
 
 //============================================================
 // Plugins
@@ -80,7 +81,7 @@ const SW = new SWPrecacheWebpackPlugin({
   dontCacheBustUrlsMatching: /\.\w{8}\./,
   filename: 'service-worker.js',
   minify: true,
-  navigateFallback: PUBLIC + 'index.html',
+  navigateFallback: PUBLIC_PATH + 'index.html',
   staticFileGlobsIgnorePatterns: [/\.map$/],
 });
 
@@ -147,7 +148,7 @@ const config = {
     path: DIST_DIR + '/',
     filename: 'js/[name].[chunkhash].js',
     sourceMapFilename: '[file].map',
-    publicPath: PUBLIC,
+    publicPath,
   },
 
   module: {
