@@ -1,5 +1,4 @@
-# Js - patterns info
-online radio
+# JavaScript-patterns
 
 TODO:
   1. ReadMe
