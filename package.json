@@ -1,7 +1,7 @@
 {
   "name": "javascript-patterns",
   "version": "1.0.0",
-  "description": "JavaScript patterns explanation",
+  "description": "JavaScript patterns examples",
   "main": "index.js",
   "browserslist": [
     "> 1%",
@@ -34,6 +34,17 @@
     "build": "cross-env NODE_ENV=production webpack",
     "deploy": "firebase deploy"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sakalx/javascript-patterns"
+  },
+  "keywords": [
+    "javascript",
+    "js",
+    "paterns",
+    "sakal",
+    "shichuan"
+  ],
   "author": "Sakal",
   "license": "MIT",
   "peerDependencies": {
