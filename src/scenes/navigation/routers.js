@@ -1,389 +1,266 @@
-import LazyLoad from 'root/components/lazy-load/index';
+import Functiondeclarations from 'root/screens/general-patterns/function-declarations/index';
+import Conditionals from 'root/screens/general-patterns/conditionals/index';
+import Accesstoglobalobject from 'root/screens/general-patterns/access-to-global-object/index';
+import Singlevarpattern from 'root/screens/general-patterns/single-var-pattern/index';
+import Hoisting from 'root/screens/general-patterns/hoisting/index';
+import Forloops from 'root/screens/general-patterns/for-loops/index';
+import Forinloops from 'root/screens/general-patterns/for-in-loops/index';
+import Augmentingbuiltinprototypes from 'root/screens/general-patterns/augmenting-built-in-prototypes/index';
+import Switchpattern from 'root/screens/general-patterns/switch-pattern/index';
+import Impliedtypecasting from 'root/screens/general-patterns/implied-typecasting/index';
+import Avoidingeval from 'root/screens/general-patterns/avoiding-eval/index';
+import Parseint from 'root/screens/general-patterns/parseint/index';
+import Minimizingglobals from 'root/screens/general-patterns/minimizing-globals/index';
+import Problemwithglobals from 'root/screens/general-patterns/problem-with-globals/index';
+import Objectliteral from 'root/screens/literals-constructors-patterns/object-literal/index';
+import Enforcingnew from 'root/screens/literals-constructors-patterns/enforcing-new/index';
+import Arrayliteral from 'root/screens/literals-constructors-patterns/array-literal/index';
+import WorkingwithJSON from 'root/screens/literals-constructors-patterns/working-with-JSON/index';
+import Primitivewrappers from 'root/screens/literals-constructors-patterns/primitive-wrappers/index';
+import Regularexpressionliteral from 'root/screens/literals-constructors-patterns/regular-expression-literal/index';
+import Callback from 'root/screens/function-patterns/callback/index';
+import Configurationobjects from 'root/screens/function-patterns/configuration-objects/index';
+import Returningfunctions from 'root/screens/function-patterns/returning-functions/index';
+import Currying from 'root/screens/function-patterns/currying/index';
+import Partialapplication from 'root/screens/function-patterns/partial-application/index';
+import Immediatefunctions from 'root/screens/function-patterns/immediate-functions/index';
+import Immediateobjectinitializatio from 'root/screens/function-patterns/immediate-object-initializatio/index';
+import Inittimebranching from 'root/screens/function-patterns/init-time-branching/index';
+import Memoization from 'root/screens/function-patterns/memoization/index';
+import Selfdefiningfunctions from 'root/screens/function-patterns/self-defining-functions/index';
+import Namespace from 'root/screens/object-creation-patterns/namespace/index';
+import Declaringdependencies from 'root/screens/object-creation-patterns/declaring-dependencies/index';
+import Privatepropertiesandmethods from 'root/screens/object-creation-patterns/private-properties-and-methods/index';
+import Revelationpattern from 'root/screens/object-creation-patterns/revelation-pattern/index';
+import Modulepattern from 'root/screens/object-creation-patterns/module-pattern/index';
+import Sandbox from 'root/screens/object-creation-patterns/sandbox/index';
+import Staticmembers from 'root/screens/object-creation-patterns/static-members/index';
+import Objectconstants from 'root/screens/object-creation-patterns/object-constants/index';
+import Chainingpattern from 'root/screens/object-creation-patterns/chaining-pattern/index';
+import Method from 'root/screens/object-creation-patterns/method/index';
+import Defaultpattern from 'root/screens/code-reuse-patterns/default-pattern/index';
+import Rentconstructor from 'root/screens/code-reuse-patterns/rent-constructor/index';
+import Rentandsetprototype from 'root/screens/code-reuse-patterns/rent-and-set-prototype/index';
+import Shareprototype from 'root/screens/code-reuse-patterns/share-prototype/index';
+import Temporaryconstructor from 'root/screens/code-reuse-patterns/temporary-constructor/index';
+import Klass from 'root/screens/code-reuse-patterns/klass/index';
+import Prototypalinheritance from 'root/screens/code-reuse-patterns/prototypal-inheritance/index';
+import Inheritancebycopyingproperties from 'root/screens/code-reuse-patterns/inheritance-by-copying-properties/index';
+import Mixins from 'root/screens/code-reuse-patterns/mix-ins/index';
+import Borrowingmethods from 'root/screens/code-reuse-patterns/borrowing-methods/index';
+import Builder from 'root/screens/design-patterns/builder/index';
+import Factorymethod from 'root/screens/design-patterns/factory-method/index';
+import Singleton from 'root/screens/design-patterns/singleton/index';
+import Decorator from 'root/screens/design-patterns/decorator/index';
+import Facade from 'root/screens/design-patterns/facade/index';
+import Chainresponsibility from 'root/screens/design-patterns/chain-responsibility/index';
+import Command from 'root/screens/design-patterns/command/index';
+import Iterator from 'root/screens/design-patterns/iterator/index';
+import Mediator from 'root/screens/design-patterns/mediator/index';
+import Observer from 'root/screens/design-patterns/observer/index';
+import Strategy from 'root/screens/design-patterns/strategy/index';
 
 const routers = [{
-  label: 'General Patterns',
-  screens: [{
+  "label": "General Patterns",
+  "screens": [{
     "label": "Function Declarations",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/general-patterns/function-declarations/index'),
-    }),
+    "component": Functiondeclarations
   }, {
     "label": "Conditionals",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/general-patterns/conditionals/index'),
-    }),
+    "component": Conditionals
   }, {
     "label": "Access to the Global Object",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/general-patterns/access-to-global-object/index'),
-    }),
+    "component": Accesstoglobalobject
   }, {
     "label": "Single var Pattern",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/general-patterns/single-var-pattern/index'),
-    }),
+    "component": Singlevarpattern
   }, {
     "label": "Hoisting",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/general-patterns/hoisting/index'),
-    }),
+    "component": Hoisting
   }, {
     "label": "for loops",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/general-patterns/for-loops/index'),
-    }),
+    "component": Forloops
   }, {
     "label": "for-in loops",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/general-patterns/for-in-loops/index'),
-    }),
+    "component": Forinloops
   }, {
     "label": "(Not) Augmenting Built-in Prototypes",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/general-patterns/augmenting-built-in-prototypes/index'),
-    }),
+    "component": Augmentingbuiltinprototypes
   }, {
     "label": "switch Pattern",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/general-patterns/switch-pattern/index'),
-    }),
+    "component": Switchpattern
   }, {
     "label": "Implied Typecasting",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/general-patterns/implied-typecasting/index'),
-    }),
+    "component": Impliedtypecasting
   }, {
     "label": "Avoiding eval()",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/general-patterns/avoiding-eval/index'),
-    }),
+    "component": Avoidingeval
   }, {
     "label": "Number Conversions with parseInt()",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/general-patterns/parseint/index'),
-    }),
+    "component": Parseint
   }, {
     "label": "Minimizing Globals",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/general-patterns/minimizing-globals/index'),
-    }),
+    "component": Minimizingglobals
   }, {
     "label": "The Problem with Globals",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/general-patterns/problem-with-globals/index'),
-    }),
-  }],
+    "component": Problemwithglobals
+  }]
 }, {
-  label: 'Literals and Constructors Patterns',
-  screens: [{
+  "label": "Literals and Constructors Patterns",
+  "screens": [{
     "label": "Object literal",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/literals-constructors-patterns/object-literal/index'),
-    }),
+    "component": Objectliteral
   }, {
     "label": "Enforcing new",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/literals-constructors-patterns/enforcing-new/index'),
-    }),
+    "component": Enforcingnew
   }, {
     "label": "Array literal",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/literals-constructors-patterns/array-literal/index'),
-    }),
+    "component": Arrayliteral
   }, {
     "label": "Working with JSON",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/literals-constructors-patterns/working-with-JSON/index'),
-    }),
+    "component": WorkingwithJSON
   }, {
     "label": "Primitive wrappers",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/literals-constructors-patterns/primitive-wrappers/index'),
-    }),
+    "component": Primitivewrappers
   }, {
     "label": "Regular expression literal",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/literals-constructors-patterns/regular expression-literal/index'),
-    }),
-  }],
+    "component": Regularexpressionliteral
+  }]
 }, {
-  label: 'Function Patterns',
-  screens: [{
+  "label": "Function Patterns",
+  "screens": [{
     "label": "Callback patterns",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/function-patterns/callback/index'),
-    }),
+    "component": Callback
   }, {
     "label": "Configuration objects",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/function-patterns/configuration-objects/index'),
-    }),
+    "component": Configurationobjects
   }, {
     "label": "Returning functions",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/function-patterns/returning-functions/index'),
-    }),
+    "component": Returningfunctions
   }, {
     "label": "Currying",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/function-patterns/currying/index'),
-    }),
+    "component": Currying
   }, {
     "label": "Partial application",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/function-patterns/partial-application/index'),
-    }),
+    "component": Partialapplication
   }, {
     "label": "Immediate functions",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/function-patterns/immediate-functions/index'),
-    }),
+    "component": Immediatefunctions
   }, {
     "label": "Immediate object initialization",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/function-patterns/immediate-object-initializatio/index'),
-    }),
+    "component": Immediateobjectinitializatio
   }, {
     "label": "Init-time branching",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/function-patterns/init-time-branching/index'),
-    }),
+    "component": Inittimebranching
   }, {
     "label": "Memoization",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/function-patterns/memoization/index'),
-    }),
+    "component": Memoization
   }, {
     "label": "Self-defining functions'",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/function-patterns/self-defining-functions/index'),
-    }),
-  }],
+    "component": Selfdefiningfunctions
+  }]
 }, {
-  label: 'Object Creation Patterns',
-  screens: [{
+  "label": "Object Creation Patterns",
+  "screens": [{
     "label": "Namespace",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/object-creation-patterns/namespace/index'),
-    }),
+    "component": Namespace
   }, {
     "label": "Declaring Dependencies",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/object-creation-patterns/declaring-dependencies/index'),
-    }),
+    "component": Declaringdependencies
   }, {
     "label": "Private Properties and Methods",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/object-creation-patterns/private-properties-and-methods/index'),
-    }),
+    "component": Privatepropertiesandmethods
   }, {
     "label": "Revelation Pattern",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/object-creation-patterns/revelation-pattern/index'),
-    }),
+    "component": Revelationpattern
   }, {
     "label": "Module Pattern",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/object-creation-patterns/module-pattern/index'),
-    }),
+    "component": Modulepattern
   }, {
     "label": "Sandbox",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/object-creation-patterns/sandbox/index'),
-    }),
+    "component": Sandbox
   }, {
     "label": "Static Members",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/object-creation-patterns/static-members/index'),
-    }),
+    "component": Staticmembers
   }, {
     "label": "Object Constants",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/object-creation-patterns/object-constants/index'),
-    }),
+    "component": Objectconstants
   }, {
     "label": "Chaining Pattern",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/object-creation-patterns/chaining-pattern/index'),
-    }),
+    "component": Chainingpattern
   }, {
     "label": "method() Method",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/object-creation-patterns/method/index'),
-    }),
-  }],
+    "component": Method
+  }]
 }, {
-  label: 'Code Reuse Patterns',
-  screens: [{
+  "label": "Code Reuse Patterns",
+  "screens": [{
     "label": "The default pattern",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/code-reuse-patterns/default-pattern/index'),
-    }),
+    "component": Defaultpattern
   }, {
     "label": "Rent a constructor",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/code-reuse-patterns/rent-constructor/index'),
-    }),
+    "component": Rentconstructor
   }, {
     "label": "Rent and Set Prototype",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/code-reuse-patterns/rent-and-set-prototype/index'),
-    }),
+    "component": Rentandsetprototype
   }, {
     "label": "Share the Prototype",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/code-reuse-patterns/share-prototype/index'),
-    }),
+    "component": Shareprototype
   }, {
     "label": "A Temporary Constructor",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/code-reuse-patterns/temporary-constructor/index'),
-    }),
+    "component": Temporaryconstructor
   }, {
     "label": "Klass",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/code-reuse-patterns/klass/index'),
-    }),
+    "component": Klass
   }, {
     "label": "Prototypal Inheritance",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/code-reuse-patterns/prototypal-inheritance/index'),
-    }),
+    "component": Prototypalinheritance
   }, {
     "label": "Inheritance by Copying Properties",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/code-reuse-patterns/inheritance-by-copying-properties/index'),
-    }),
+    "component": Inheritancebycopyingproperties
   }, {
     "label": "Mix-ins",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/code-reuse-patterns/mix-ins/index'),
-    }),
+    "component": Mixins
   }, {
     "label": "Borrowing Methods",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/code-reuse-patterns/borrowing-methods/index'),
-    }),
-  }],
+    "component": Borrowingmethods
+  }]
 }, {
-  label: 'Design Patterns',
-  screens: [{
+  "label": "Design Patterns",
+  "screens": [{
     "label": "Builder",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/design-patterns/builder/index'),
-    }),
+    "component": Builder
   }, {
     "label": "Factory method",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/design-patterns/factory-method/index'),
-    }),
+    "component": Factorymethod
   }, {
     "label": "Singleton",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/design-patterns/singleton/index'),
-    }),
+    "component": Singleton
   }, {
     "label": "Decorator",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/design-patterns/decorator/index'),
-    }),
+    "component": Decorator
   }, {
     "label": "Facade",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/design-patterns/facade/index'),
-    }),
+    "component": Facade
   }, {
     "label": "Chain of responsibility",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/design-patterns/chain-responsibility/index'),
-    }),
+    "component": Chainresponsibility
   }, {
     "label": "Command",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/design-patterns/command/index'),
-    }),
+    "component": Command
   }, {
     "label": "Iterator",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/design-patterns/iterator/index'),
-    }),
+    "component": Iterator
   }, {
     "label": "Mediator",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/design-patterns/mediator/index'),
-    }),
+    "component": Mediator
   }, {
     "label": "Observer",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/design-patterns/observer/index'),
-    }),
+    "component": Observer
   }, {
     "label": "Strategy",
-    "component": LazyLoad({
-      loader: () =>
-        import ('root/screens/design-patterns/strategy/index'),
-    }),
-  }],
+    "component": Strategy
+  }]
 }];
 
 export default routers;

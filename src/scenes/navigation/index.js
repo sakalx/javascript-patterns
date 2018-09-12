@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {allDash, camelCase} from 'root/helpers/string-methods';
-import routers from './routers';
+import routers from './lazy-routers';
 
 import LinkTo from 'root/components/link';
 
