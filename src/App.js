@@ -49,12 +49,14 @@ class App extends React.PureComponent {
               ))}
             </MainContent>
 
+            {navigator.onLine &&
             <Disqus component='section' elevation={1}>
               <Typography variant='display1'>
                 Comments
               </Typography>
               <DiscussionEmbed foo={theme.palette.background.default} config={disqus} shortname='javascript-patterns'/>
             </Disqus>
+            }
 
             <Footer/>
 
