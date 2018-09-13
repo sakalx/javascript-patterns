@@ -51,7 +51,7 @@ class App extends React.PureComponent {
               ))}
             </MainContent>
 
-            {/*    {navigator.onLine &&
+            {navigator.onLine &&
             <Disqus component='section' elevation={1}>
               <Typography variant='display1'>
                 Comments
@@ -59,9 +59,9 @@ class App extends React.PureComponent {
               <DiscussionEmbed foo={theme.palette.background.default} config={disqus} shortname='javascript-patterns'/>
             </Disqus>
             }
-*/}
-            <Footer/>
 
+            <Footer/>
+            <div className="sharethis-inline-share-buttons"/>
           </React.Fragment>
         </Router>
       </MuiThemeProvider>
