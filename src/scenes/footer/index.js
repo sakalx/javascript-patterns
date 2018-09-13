@@ -22,7 +22,7 @@ const Footer = () => (
         </LinkedinIcon>
       </Title>
     </Link>
-    <div className="sharethis-inline-share-buttons"/>
+    {navigator.onLine && <div className="sharethis-inline-share-buttons"/>}
   </footer>
 );
 
