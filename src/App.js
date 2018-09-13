@@ -11,9 +11,10 @@ import {DiscussionEmbed} from 'disqus-react';
 
 import {allDash} from 'root/helpers/string-methods';
 
-import Header from './scenes/header';
-import Navigation from './scenes/navigation';
 import Footer from './scenes/footer';
+import Header from './scenes/header';
+import Home from './screens/home';
+import Navigation from './scenes/navigation';
 
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -40,6 +41,7 @@ class App extends React.PureComponent {
             />
 
             <MainContent>
+              <Route exact path='/' component={Home}/>
               {screens.map(screen => (
                 <Route
                   key={screen["label"]}
@@ -49,7 +51,7 @@ class App extends React.PureComponent {
               ))}
             </MainContent>
 
-            {navigator.onLine &&
+            {/*    {navigator.onLine &&
             <Disqus component='section' elevation={1}>
               <Typography variant='display1'>
                 Comments
@@ -57,7 +59,7 @@ class App extends React.PureComponent {
               <DiscussionEmbed foo={theme.palette.background.default} config={disqus} shortname='javascript-patterns'/>
             </Disqus>
             }
-
+*/}
             <Footer/>
 
           </React.Fragment>
@@ -68,9 +70,7 @@ class App extends React.PureComponent {
 }
 
 const MainContent = styled('main')`
-  margin-bottom: 15px;
- // min-height: 100vh;
-  padding: 100px 7vw 15px;
+  padding: 100px 7vw 50px;
 `;
 
 const Disqus = styled(Paper)`

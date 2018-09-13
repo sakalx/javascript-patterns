@@ -106,7 +106,7 @@ const routers = [{
     "component": Problemwithglobals
   }]
 }, {
-  "label": "Literals and Constructors Patterns",
+  "label": "Literals & Constructors Patterns",
   "screens": [{
     "label": "Object literal",
     "component": Objectliteral

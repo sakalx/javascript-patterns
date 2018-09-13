@@ -11,7 +11,7 @@ const Reference = ({list}) => (
       References
     </Typography>
 
-    <Typography component="ul" variant="body1" gutterBottom>
+    <Typography component="ul" variant="body1" gutterBottom color="secondary">
       {list.map(ref => (
         <li key={ref}>
           <LinkReference title={ref}/>

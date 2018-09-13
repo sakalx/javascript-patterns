@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {allDash, camelCase} from 'root/helpers/string-methods';
-import routers from './lazy-routers';
+import routers from './routers';
 
 import LinkTo from 'root/components/link';
 
@@ -48,7 +48,7 @@ class Navigation extends React.PureComponent {
                 onClick={() => this.handleToggleDrawer(false)()}
       >
         <HomeLinkTitle variant="title" color="textSecondary">
-          JS-Patterns
+          JavaScript-Patterns
         </HomeLinkTitle>
       </HomeLink>
       <Divider/>

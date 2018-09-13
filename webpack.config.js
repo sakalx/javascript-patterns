@@ -29,6 +29,19 @@ const commonsChunk = new webpack.optimize.CommonsChunkPlugin({
   name: ['index', 'vendor'],
 });
 
+const htmlIndex = new HtmlWebpackPlugin({
+  template: path.join(__dirname, develop, 'index.html'),
+  inject: 'body',
+  hash: true,
+  filename: 'index.html',
+  chunks: ['index', 'vendor'],
+});
+
+const uglifyJs = new webpack.optimize.UglifyJsPlugin({
+  parallel: {cache: true, workers: 2},
+  sourceMap: true,
+});
+
 const favicon = new FaviconWebpackPlugin({
   logo: `./${develop}/static/favicon/logo.png`,
   prefix: 'favicon/',
@@ -49,23 +62,10 @@ const favicon = new FaviconWebpackPlugin({
   },
 });
 
-const htmlIndex = new HtmlWebpackPlugin({
-  template: path.join(__dirname, develop, 'index.html'),
-  inject: 'body',
-  hash: true,
-  filename: 'index.html',
-  chunks: ['index', 'vendor'],
-});
-
-const uglifyJs = new webpack.optimize.UglifyJsPlugin({
-  parallel: {cache: true, workers: 2},
-  sourceMap: true,
-});
-
 const pwaManifest = new WebpackPwaManifest({
-  name: 'JavaScript patterns',
-  short_name: 'Js-patterns',
-  description: 'JavaScript patterns examples',
+  name: 'JavaScript patterns collection',
+  short_name: 'JavaScript-patterns',
+  description: 'A JavaScript pattern and antipattern collection that covers function patterns, design patterns, general patterns, literals and constructor patterns, object creation patterns, code reuse patterns, ReactJs patterns coming soon.',
   background_color: '#2196f3',
   theme_color: '#2196f3',
   start_url: '/',

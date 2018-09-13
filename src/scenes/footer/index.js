@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {linkedinIco} from 'root/static/icons';
+import {linkedinIco} from 'root/components/icons';
 
 import {
   Link,
@@ -18,7 +18,7 @@ const Footer = () => (
       >
         Developed by Sakal
         <LinkedinIcon viewBox="0 0 434 434">
-          <path d={linkedinIco}/>
+          {linkedinIco}
         </LinkedinIcon>
       </Title>
     </Link>

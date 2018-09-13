@@ -1,7 +1,7 @@
 {
   "name": "javascript-patterns",
   "version": "1.0.0",
-  "description": "JavaScript patterns examples",
+  "description": "JavaScript patterns collection",
   "main": "index.js",
   "browserslist": [
     "> 1%",
@@ -39,11 +39,20 @@
     "url": "https://github.com/sakalx/javascript-patterns"
   },
   "keywords": [
+    "antipattern",
+    "chuan",
+    "collection",
+    "constructor",
+    "design",
+    "function",
+    "general",
     "javascript",
     "js",
-    "paterns",
-    "sakal",
-    "shichuan"
+    "literals",
+    "object",
+    "patterns",
+    "reuse",
+    "sakal"
   ],
   "author": "Sakal",
   "license": "MIT",

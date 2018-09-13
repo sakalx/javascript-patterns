@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {loadDisqusComments} from 'root/redux-core/actions/disqus';
 import {toggleTheme} from 'root/redux-core/actions/theme';
 
-import {githubIco, lightBulbIco} from 'root/static/icons';
+import {githubIco, lightBulbIco} from 'root/components/icons';
 
 import AppBar from '@material-ui/core/AppBar';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -64,7 +64,7 @@ const Header = ({loadDisqusComments, toggleTheme, toggleDrawer, location}) => {
           <Tooltip title="Toggle light/dark theme">
             <IconButton color="inherit" onClick={toggleTheme}>
               <SvgIcon viewBox="0 0 24 24" color="inherit">
-                <path d={lightBulbIco}/>
+                {lightBulbIco}
               </SvgIcon>
             </IconButton>
           </Tooltip>
@@ -75,7 +75,7 @@ const Header = ({loadDisqusComments, toggleTheme, toggleDrawer, location}) => {
               onClick={() => window.open('https://github.com/sakalx/js-info', '_blank')}
             >
               <SvgIcon viewBox="0 0 24 24" color="inherit">
-                <path d={githubIco}/>
+                {githubIco}
               </SvgIcon>
             </IconButton>
           </Tooltip>

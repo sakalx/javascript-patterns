@@ -18,12 +18,12 @@ export const Title = styled(Typography)`
   align-items: center;
   display: flex !important;
   justify-content: center;
-  margin-bottom: 20px !important;
+  margin: 25px 0 !important;
   background-color: #666;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   color: transparent;
-  text-shadow: rgba(255,255,255,.5) 0px 3px 3px;
+  text-shadow: rgba(255,255,255,.5) 0 3px 3px;
   -webkit-box-reflect: below 0 -webkit-linear-gradient(bottom, rgba(255, 255, 255, .5) 0%, transparent 50%, transparent 100%)
 `;
 
