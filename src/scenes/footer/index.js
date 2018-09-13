@@ -14,14 +14,15 @@ const Footer = () => (
       <Title
         align="center"
         color='textSecondary'
-        variant="title"
+        variant="subheading"
       >
-        Developed by Sakal
+        Developed by SAKAL
         <LinkedinIcon viewBox="0 0 434 434">
           {linkedinIco}
         </LinkedinIcon>
       </Title>
     </Link>
+    <div className="sharethis-inline-share-buttons"/>
   </footer>
 );
 

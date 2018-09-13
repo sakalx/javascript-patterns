@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {Wrap} from "root/scenes/footer/style";
 import routers from 'root/scenes/navigation/routers';
 
 import {connect} from 'react-redux';
@@ -61,7 +62,6 @@ class App extends React.PureComponent {
             }
 
             <Footer/>
-            <div className="sharethis-inline-share-buttons"/>
           </React.Fragment>
         </Router>
       </MuiThemeProvider>

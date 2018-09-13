@@ -1,5 +1,5 @@
-import store from "root/redux-core/store";
 import styled from 'styled-components';
+import store from 'root/redux-core/store';
 
 import SvgIcon from '@material-ui/core/SvgIcon';
 import Typography from '@material-ui/core/Typography';
@@ -18,7 +18,8 @@ export const Title = styled(Typography)`
   align-items: center;
   display: flex !important;
   justify-content: center;
-  margin: 25px 0 !important;
+  padding-top: 15px;
+  margin-bottom: 15px !important;
   background-color: #666;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -28,5 +29,6 @@ export const Title = styled(Typography)`
 `;
 
 export const LinkedinIcon = styled(SvgIcon)`
+  font-size: 21px !important;
   margin: 0 10px;
 `;

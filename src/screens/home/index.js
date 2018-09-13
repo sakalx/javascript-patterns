@@ -36,7 +36,7 @@ const Home = () => (
         100% free & taken from
         <LinkReferences
           color="primary"
-          title="SHI CHUAN"
+          title="Shi CHUAN"
           to="https://twitter.com/shichuan"
           variant="headline"
         />
@@ -56,7 +56,7 @@ const Home = () => (
         target="_blank"
         variant="outlined"
       >
-        original source
+        legacy source
       </Button>
     </Wrap>
 
