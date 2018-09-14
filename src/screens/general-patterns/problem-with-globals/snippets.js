@@ -22,11 +22,9 @@ const preferred1 = () => (
 
 const antipattern2 = () => (
   `
-  function sum(x, y) {
-    // implied global
-    result = x + y;
-    
-    return result;
+  function foo() {
+    var a = b = 0;
+    // ...
   }
 `
 );
