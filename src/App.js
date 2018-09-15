@@ -1,6 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import {Wrap} from "root/scenes/footer/style";
+import {HashRouter as Router, Route} from 'react-router-dom';
 import routers from 'root/scenes/navigation/routers';
 
 import {connect} from 'react-redux';
@@ -52,7 +51,7 @@ class App extends React.PureComponent {
               ))}
             </MainContent>
 
-            {navigator.onLine &&
+            {/*      {navigator.onLine &&
             <Disqus component='section' elevation={1}>
               <Typography variant='display1'>
                 Comments
@@ -61,7 +60,7 @@ class App extends React.PureComponent {
             </Disqus>
             }
 
-            <Footer/>
+            <Footer/>*/}
           </React.Fragment>
         </Router>
       </MuiThemeProvider>
