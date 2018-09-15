@@ -51,7 +51,7 @@ class App extends React.PureComponent {
               ))}
             </MainContent>
 
-            {/*      {navigator.onLine &&
+            {navigator.onLine &&
             <Disqus component='section' elevation={1}>
               <Typography variant='display1'>
                 Comments
@@ -60,7 +60,7 @@ class App extends React.PureComponent {
             </Disqus>
             }
 
-            <Footer/>*/}
+            <Footer/>
           </React.Fragment>
         </Router>
       </MuiThemeProvider>
